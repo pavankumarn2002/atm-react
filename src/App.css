@@ -1,0 +1,42 @@
+.container {
+  background-color: rgb(240, 240, 240);
+
+}
+
+.thumb-nail {
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 2px 2px 8px 8px rgb(240, 240, 240);
+  padding: 12px;
+  margin-bottom: 12px
+}
+.thumb-nail img{
+  width:100%
+}
+nav a{
+  text-decoration: none;margin-left:15px;font-size: 12px;
+}
+nav .active{
+  font-weight: bold;color:rgb(255, 136, 136)
+}
+.navbar{
+  position: fixed!important;width: 100%;
+}
+.component-container{
+  padding-top:75px
+}
+.transaction{
+  margin-right: 25px;
+}
+.cread-account{
+  margin-right: 25px;
+}
+.login-content{
+  text-align: center;display: flex;flex-direction: column;width:30%
+}
+.login-content input,.login-content button{
+  margin-bottom:25px
+}
+.content{
+  display: flex;justify-content: center;
+}
