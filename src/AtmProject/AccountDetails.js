@@ -67,8 +67,8 @@ const AccountDetails = () => {
      const navigateTo=()=>{
         navigate('/atmProject')
      }
-    const submitForm = (e) => {
-        e.preventDefault()
+    const submitForm = async(e) => {
+        e.preventDefault();
         const obj = {
             accountNo: accDetails?.accountNo,
             name: accDetails?.name,
@@ -78,8 +78,8 @@ const AccountDetails = () => {
             withDraw: withDraw,
             location: location
         }
-        console.log(obj)
-        axios.put(`https://api-generator.retool.com/cNuTE3/data/${accDetails?.id}`, obj)
+        // console.log(obj)
+        await axios.put(`https://api-generator.retool.com/cNuTE3/data/${accDetails?.id}`, obj)
             .then(response => {
                 const newData = data.map(item => {
                     if (item.id === accDetails.id) {
@@ -100,7 +100,8 @@ const AccountDetails = () => {
         <div className=" ">
             <button className="btn btn-primary" onClick={navigateTo}>Back</button>
             <h1>AccountDetails</h1>
-            <form onSubmit={handleSubmit(submitForm)} className="row">
+            {/* <form onSubmit={()=>{console.log();}} className="row"> */}
+            <form onSubmit={(e)=>{handleSubmit(submitForm(e))}} className="row">
                 <div className="form-group col-6 mb-2">
                     <lable>Account Number</lable>
                     <input className="form-control" type="text"

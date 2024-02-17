@@ -61,7 +61,7 @@ const CreateAccount = () => {
         <div className="">
         <button className="btn btn-primary" onClick={navigateTo}>Back</button>
             <h1>Create Account</h1>
-            <form onSubmit={handleSubmit(submitForm)} className="row">
+            <form onSubmit={(e)=>{handleSubmit(submitForm(e))}} className="row">
                 <div className="form-group col-6 mb-2">
                     <lable>Account Number</lable>
                     <input className="form-control" type="text" placeholder="3731-8304-2322-5259"
@@ -75,12 +75,11 @@ const CreateAccount = () => {
                 <div className="form-group col-6 mb-2">
                     <lable>First Name</lable>
                     <input className="form-control" type="text" placeholder="Enter Your Name"
-                        {...register("name",{required:true,pattern:/^[a-z]*$/,minLength:3,maxLength:20})}
+                        {...register("name",{required:true,minLength:3,maxLength:20})}
                         id="name"
                         value={name}
                         onChange={(e) => changeDetails(e, "name")} />
                         <span className="text-danger">{errors.name?.type ==="required" && "Name Is Required"}</span>
-                        <span className="text-danger">{errors.name?.type ==="pattern" && "Name with out Spaces"}</span>
                         <span className="text-danger">{errors.name?.type ==="minLength" && "Need To Enter More Than 3 Characters"}</span>
                         <span className="text-danger">{errors.name?.type ==="maxLength" && "Need To Enter Less Than 16 Characters"}</span>
                 </div>
