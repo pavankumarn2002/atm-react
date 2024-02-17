@@ -8,7 +8,7 @@ const Api = () => {
     }
     const [userData, setUserData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const [isError, setIsError] = useState({ status: false, msg: "" })
+    const [isError, setIsError] = useState({ status: false, msg: '' })
 
     const fetchData = async (url) => {
         setIsLoading(true)
