@@ -8,7 +8,7 @@ const PrivateRout=({children})=>{
     }
     return(
         children
-        )
+    )
     
 
 }

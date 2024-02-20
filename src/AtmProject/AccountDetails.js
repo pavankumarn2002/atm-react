@@ -53,9 +53,14 @@ const AccountDetails = () => {
         } else if (name === "withDraw") {
             setWithDraw(e.target.value)
             if (e.target.value !== '' && e.target.value>0) {
-                let bal = parseInt(accDetails?.balance) - parseInt(e.target.value)
-                setBalance(bal)
-                setDisableDeposit(true)
+                if(parseInt(accDetails?.balance) - parseInt(e.target.value)>0){
+                    let bal = parseInt(accDetails?.balance) - parseInt(e.target.value)
+                    setBalance(bal)
+                    setDisableDeposit(true)
+                }else{
+                    alert("Please Enter Valid input")
+                    setWithDraw(0)
+                }
             } else {
                 setBalance(accDetails?.balance)
                 setDisableDeposit(false)

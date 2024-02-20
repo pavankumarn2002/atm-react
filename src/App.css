@@ -40,3 +40,24 @@ nav .active{
 .content{
   display: flex;justify-content: center;
 }
+.userProfile{
+  font-size: 12px;background-color: crimson;border-radius: 12px;color:white;font-weight:bold;padding:0px 5px 5px 5px;text-align: center;height:20px
+}
+.login-container{
+  height:100vh;display: flex;justify-content: center;
+}
+.login-content{
+  align-self: start;; background-color: white;border-radius: 7px;padding:12px;margin-bottom:75px;box-shadow: 2px 2px 8px 8px solid rgb(245, 245, 245);
+}
+.link-to-navigate{
+  text-decoration: none;font-size: 12px;cursor: pointer;
+}
+
+@media (max-width: 769px){
+.transaction-table{
+  font-size: 10px;
+}
+.transaction-table button{
+  font-size: 10px;
+}
+}
