@@ -3,7 +3,7 @@ import axios from "axios";
 const NewProject = () => {
   const [data, setData] = useState();
   const [limit, setLimit] = useState(5);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const fetchData = () => {
     axios
       .get(
