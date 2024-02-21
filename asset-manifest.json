@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/atm-react/static/css/main.e792274b.css",
-    "main.js": "/atm-react/static/js/main.ed9d0eb7.js",
+    "main.css": "/atm-react/static/css/main.ba63e131.css",
+    "main.js": "/atm-react/static/js/main.ae4aacea.js",
     "index.html": "/atm-react/index.html",
-    "main.e792274b.css.map": "/atm-react/static/css/main.e792274b.css.map",
-    "main.ed9d0eb7.js.map": "/atm-react/static/js/main.ed9d0eb7.js.map"
+    "main.ba63e131.css.map": "/atm-react/static/css/main.ba63e131.css.map",
+    "main.ae4aacea.js.map": "/atm-react/static/js/main.ae4aacea.js.map"
   },
   "entrypoints": [
-    "static/css/main.e792274b.css",
-    "static/js/main.ed9d0eb7.js"
+    "static/css/main.ba63e131.css",
+    "static/js/main.ae4aacea.js"
   ]
 }
