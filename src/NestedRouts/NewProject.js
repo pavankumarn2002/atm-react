@@ -18,30 +18,51 @@ const NewProject = () => {
   };
   useEffect(() => {
     fetchData();
-  }, [count]);
+  }, [count, limit]);
   const preview = () => {
     setCount(count - 1);
-    if (count <=1) {
+    if (count <= 1) {
       setCount(1);
     }
   };
   const next = () => {
     setCount(count + 1);
-    if(data.length==0){
-        setCount(count)
+    if (data.length == 0) {
+      setCount(count);
     }
   };
-
+  const changeHandler = (e, name) => {
+    if ((name = "limit")) {
+      setLimit(e.target.value);
+    }
+  };
   return (
     <div className="paginator-container">
       <h1>Paginator</h1>
-      <button className="btn btn-primary " onClick={preview}>
-        Preview
-      </button>
-      <button className="btn btn-primary" onClick={next}>
-        Next
-      </button>
-      <b>Page :- {count}</b>
+      <div className="actions">
+        <div className="paginator-buttons">
+          <button className="btn btn-primary " onClick={preview}>
+            Preview
+          </button>
+          <button className="btn btn-primary" onClick={next}>
+            Next
+          </button>
+        </div>
+        <div className="paginator-count">
+          <div className="page-items">
+          <label>Items Per Page</label>
+          <input
+            className="set-limit"
+            type="number"
+            name="limit"
+            id="limit"
+            value={limit}
+            onChange={(e) => changeHandler(e, "limit")}
+          />
+          </div>
+          <b>Page :- {count}</b>
+        </div>
+      </div>
       {data?.length == 0 && <h5>No Data Found</h5>}
 
       {data?.map((res, index) => {

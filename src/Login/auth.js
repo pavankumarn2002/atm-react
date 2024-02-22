@@ -14,19 +14,23 @@ export const AuthProvider = ({ children }) => {
         fetchLoginData(URL)
     },[userData])
     const login = (email,password) => {
+        let count=0
         for(let i=0;i<userData.length;i++){
             if(email===userData[i].email && password===userData[i].password){
-                setUser(email)
-                console.log(userData[i])
+                count++
             }
         }
-        fetchLoginData(URL)
+        if(count>=1){
+            setUser(email)
+        }else{
+            alert("please enter valid details")
+        }
     }
     const logout = () => {
         setUser(null)
     }
     return (
-        <AuthContext.Provider value={{ user, login, logout }} > {children}</ AuthContext.Provider>
+        <AuthContext.Provider value={{ user,userData, login, logout }} > {children}</ AuthContext.Provider>
     )
 }
 export const useAuth = () => {

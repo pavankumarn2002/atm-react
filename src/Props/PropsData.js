@@ -1,10 +1,7 @@
 import React from "react";
 import data from "../data";
 import Product from "./Product";
-import { useAuth } from "../Login/auth";
 const PropsData = () => {
-    const userData=useAuth()
-    console.log(userData)
     return (
         <div className="container">
       <h1><u>Components And Props</u> :-</h1>

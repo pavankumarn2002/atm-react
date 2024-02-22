@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const ACCOUNT_API_BASE_URL="https://api-generator.retool.com/ew1RIF/data"
 const LogIn = () => {
-  const { login } = useAuth();
+  const { userData,login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [register, setRegister] = useState(false);
@@ -24,7 +24,16 @@ const LogIn = () => {
       email: email,
       password: password,
     };
-    axios
+    let count=0
+    for(let i=0;i<userData.length;i++){
+      if(email===userData[i].email){
+        count++
+      }
+    }
+    if(count>=1){
+      alert("user already exist")
+    }else{
+      axios
       .post(ACCOUNT_API_BASE_URL, newData)
       .then((response) => {
         //   setData([...data, response.data]);
@@ -35,6 +44,8 @@ const LogIn = () => {
       .catch((error) => {
         console.log(error);
       });
+    }
+    
   };
   const dualContent = () => {
     setRegister(!register);

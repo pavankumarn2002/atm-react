@@ -55,6 +55,24 @@ nav .active{
 .paginator-container button{
   margin-right:25px
 }
+.paginator-container .actions{
+    display: flex;justify-content: space-between;
+}
+.paginator-container .paginator-count{
+  display: flex;justify-content: space-between;
+}
+.paginator-container .page-items{
+ display: flex;flex-direction: column;margin-top:-25px
+}
+.paginator-container .page-items label{
+  font-weight: bold;font-size: 12px;
+}
+.paginator-container .page-items input{
+  width:75px
+}
+.set-limit{
+  margin-right:25px
+}
 @media (max-width: 769px){
 .transaction-table{
   font-size: 10px;
