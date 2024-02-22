@@ -44,7 +44,7 @@ const Transactions = () => {
     return (
         <div className="container">
             <button className="btn btn-success cread-account" onClick={navigateTo} >Create New Account</button>
-            <input type="number" name="search" id="search" placeholder="Enter Account Number" value={search} onChange={(e) => changeHandle(e, 'search')} />
+            <input type="text" name="search" id="search" placeholder="Enter Account Number" value={search} onChange={(e) => changeHandle(e, 'search')} />
             
             <table className="table transaction-table mt-4 mb-4">
                 <thead>
@@ -89,7 +89,7 @@ const Transactions = () => {
                                             <Link to={`/atmProject/${id}`}>
                                                 <button className="btn btn-warning transaction">Transaction</button>
                                             </Link>
-                                            <button className="btn btn-danger" onClick={() => deleteData(id)}>Delete</button>
+                                            <button className="btn btn-danger" onClick={() => deleteData(id)} disabled={true}>Delete</button>
                                         </td>
                                     </tr>
                                 )
