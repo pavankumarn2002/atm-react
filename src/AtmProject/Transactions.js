@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ACCOUNT_API_BASE_URL = "https://api-generator.retool.com/cNuTE3/data";
 const Transactions = () => {
     const navigate = useNavigate()
-    const [search, setSearch] = useState()
+    const [search, setSearch] = useState(null)
     const [newData, setNewData] = useState()
     const { data, setData } = useTransactionGetApi(ACCOUNT_API_BASE_URL)
 

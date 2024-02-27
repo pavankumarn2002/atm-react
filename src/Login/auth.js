@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     }
     useEffect(()=>{
         fetchLoginData(URL)
-    },[userData])
+    },[])
     const login = (email,password) => {
         let count=0
         for(let i=0;i<userData.length;i++){
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
         setUser(null)
     }
     return (
-        <AuthContext.Provider value={{ user,userData, login, logout }} > {children}</ AuthContext.Provider>
+        <AuthContext.Provider value={{ user,userData, login, logout,fetchLoginData }} > {children}</ AuthContext.Provider>
     )
 }
 export const useAuth = () => {

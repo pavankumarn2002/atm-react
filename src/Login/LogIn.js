@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const ACCOUNT_API_BASE_URL="https://api-generator.retool.com/ew1RIF/data"
 const LogIn = () => {
-  const { userData,login } = useAuth();
+  const { userData,login,fetchLoginData } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [register, setRegister] = useState(false);
@@ -38,7 +38,7 @@ const LogIn = () => {
       .then((response) => {
         //   setData([...data, response.data]);
         //   setNewData({ name: '' });
-        
+        fetchLoginData(ACCOUNT_API_BASE_URL)
         navigate("/");
       })
       .catch((error) => {

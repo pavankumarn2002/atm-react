@@ -61,7 +61,15 @@ const Api = () => {
                         }
                     </div>)
             }
-
+<h1 class="text-green-500 text-4xl font-bold">
+        Geeksforgeeks
+    </h1>
+    <strong>Tailwind CSS Tutorial</strong>
+    <p>
+        You can use Tailwind CSS as a replacement of CSS,
+        this is a framework that increase your pace to
+        design any website.
+    </p>
         </div>
     )
 }

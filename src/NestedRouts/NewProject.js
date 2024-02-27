@@ -34,6 +34,7 @@ const NewProject = () => {
   const changeHandler = (e, name) => {
     if ((name = "limit")) {
       setLimit(e.target.value);
+      setCount(1)
     }
   };
   return (
@@ -70,7 +71,7 @@ const NewProject = () => {
         return (
           <div key={id} className="">
             <h5>
-              {index} ---------------------------------- {name}
+              {index+1} ---------------------------------- {name}
             </h5>
           </div>
         );
